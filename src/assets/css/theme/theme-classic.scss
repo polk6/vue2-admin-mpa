@@ -1,0 +1,5 @@
+@import './variable.scss';
+
+body.theme-classic {
+  @import '../theme-ui.scss';
+}

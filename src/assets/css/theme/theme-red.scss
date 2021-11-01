@@ -1,0 +1,7 @@
+@import './variable.scss';
+
+body.theme-red {
+  $color-primary: #d83b3b;
+  $color-background: #d83b3b59;
+  @import '../theme-ui.scss';
+}

@@ -1,0 +1,9 @@
+@import './normalize.css';
+@import './global.css';
+
+// theme
+@import './theme/theme-classic.scss';
+@import './theme/theme-red.scss';
+
+// base app
+@import './baseApp.scss';

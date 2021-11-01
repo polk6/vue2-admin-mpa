@@ -1,0 +1,119 @@
+.BaseApp-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  .BaseApp-page-header {
+    margin-bottom: 10px;
+    .BaseApp-header-search {
+      background: #f8f8f8;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .el-form {
+        .el-form-item {
+          margin-bottom: 0;
+          .el-form-item__label {
+            line-height: 36px;
+          }
+          .el-form-item__content {
+            line-height: 1;
+          }
+        }
+        .el-input-group {
+          vertical-align: unset;
+        }
+      }
+      .BaseApp-header-search__btns {
+        display: flex;
+        flex-direction: row;
+        .el-button {
+          height: 36px;
+        }
+      }
+    }
+    .Base-header-normal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 0;
+    }
+  }
+  .BaseApp-page-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+  }
+  .BaseApp-page-footer {
+  }
+}
+
+/* dialog */
+.BaseApp-dialog {
+  .BaseApp-dialog__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .header__title {
+      font-size: 18px;
+      color: #333333;
+    }
+    .header__searchInput {
+      width: 260px;
+      height: 36px;
+      margin-right: 36px;
+      .el-input__inner {
+        height: 40px;
+      }
+    }
+  }
+  .BaseApp-dialog__main {
+    max-height: 450px;
+    overflow-y: auto;
+  }
+  .BaseApp-dialog__footer {
+    text-align: right;
+    padding-top: 20px;
+  }
+  &.BaseApp-dialog--small {
+    .el-dialog {
+      width: 575px;
+    }
+  }
+}
+
+/* form */
+.BaseApp-form {
+  .BaseApp-form__main--add {
+  }
+  .BaseApp-form__main--view {
+  }
+  .BaseApp-form__footer {
+    text-align: right;
+  }
+}
+
+/* table */
+.BaseApp-table {
+  color: #333333;
+  .el-table__header-wrapper {
+    .cell {
+      color: #111111;
+    }
+  }
+  .el-button--text {
+    padding: 0;
+  }
+}
+.BaseAppp-pagination {
+  margin: 20px 0;
+  text-align: right;
+}

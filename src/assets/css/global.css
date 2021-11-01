@@ -1,0 +1,25 @@
+body{
+  color: #333333;
+}
+
+ui,
+li {
+  list-style-type: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  height: 10px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 12px;
+  background-clip: padding-box;
+  background-color: #ccd4d4;
+  box-shadow: inset -1px -1px 0px #ccd4d4, inset 1px 1px 0px #ccd4d4;
+}
