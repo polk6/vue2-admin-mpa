@@ -91,7 +91,7 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
-import StudenttModel from '../../models/StudenttModel';
+import StudenttModel from '../../model/StudenttModel';
 
 export default {
   name: 'tableDbClickEditDemo',

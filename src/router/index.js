@@ -20,6 +20,7 @@ const lazyload = (name) => () => import(`@/pages/${name}`);
 // 业务路由
 import tableDemoRouter from './tableDemo.router';
 import schoolManagementRouter from './schoolManagement.router';
+import directiveRouter from './directive.router';
 
 let routes = [
   {
@@ -30,7 +31,7 @@ let routes = [
     path: '/mpa-layout',
     name: 'mpa-layout',
     component: lazyload('mpa-layout'),
-    children: [].concat(schoolManagementRouter, tableDemoRouter)
+    children: [].concat(schoolManagementRouter, tableDemoRouter, directiveRouter)
   }
 ];
 // router register

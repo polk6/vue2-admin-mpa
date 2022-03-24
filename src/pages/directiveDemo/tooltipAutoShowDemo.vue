@@ -1,26 +1,10 @@
-<!-- studentLazyMgt 学生管理懒加载 -->
+<!-- tooltipAutoShowDemo: tooltip-auto-show demo -->
 <template>
-  <div class="BaseApp-page studentLazyMgt-wrapper">
+  <div class="BaseApp-page tooltipAutoShowDemo-wrapper">
     <header class="BaseApp-page-header">
-      <div class="BaseApp-header-search">
-        <el-form :inline="true" ref="searchForm" :model="queryObj">
-          <el-form-item label="性别">
-            <el-select v-model="queryObj.gender" clearable placeholder="请选择" @change="search">
-              <el-option v-for="(item,index) in genderList" :key="index" :label="item.label" :value="item.value"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item>
-            <el-input class="input-search" placeholder="请输入学生姓名" v-model="queryObj.keyWord">
-              <el-button slot="append" icon="el-icon-search" @click="search"></el-button>
-            </el-input>
-          </el-form-item>
-        </el-form>
-        <div class="BaseApp-header-search__btns">
-          <el-button plain type="primary" @click="add">新增</el-button>
-        </div>
-      </div>
+      <p>ak-tooltip-auto-show指令: 扩展了tooltip组件，当内容过长时才显示tooltip。当前页面中[姓名]使用了此指令。</p>
     </header>
-    <main class="BaseApp-page-main" @scroll="lazyLoadData">
+    <main class="BaseApp-page-main">
       <!-- 标签 -->
       <div class="card-wrapper">
         <div class="card-item" v-for="(item, index) in dataList" :key="index">
@@ -31,7 +15,9 @@
             </div>
             <div class="details-inner__row">
               <span class="details-inner__row-name">姓名:</span>
-              <span class="details-inner__row-value">{{item.name}}</span>
+              <el-tooltip placement="top" effect="dark" :content="item.name" v-ak-tooltip-auto-show>
+                <span class="details-inner__row-value">{{item.name}}</span>
+              </el-tooltip>
             </div>
             <div class="details-inner__row">
               <span class="details-inner__row-name">年龄:</span>
@@ -78,10 +64,10 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
-import StudentAdd from './components/StudentAdd';
+import StudentAdd from '../schoolManagement/components/StudentAdd';
 
 export default {
-  name: 'studentLazyMgt',
+  name: 'tooltipAutoShowDemo',
   components: { StudentAdd },
   data() {
     return {
@@ -134,21 +120,6 @@ export default {
       this.$data.dataList = [];
       this.$data.isAllDataLoaded = false;
       this.loadData();
-    },
-
-    /**
-     * lazy load
-     */
-    lazyLoadData(e) {
-      if (!this.$data.dataLoading && !this.$data.isAllDataLoaded) {
-        let el = e.srcElement;
-        if (el.scrollHeight - el.scrollTop - 50 < el.clientHeight) {
-          this.$data.dataLoading = true;
-          setTimeout(() => {
-            this.loadData();
-          }, 1000);
-        }
-      }
     },
 
     /**
@@ -261,10 +232,10 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.studentLazyMgt-wrapper {
+.tooltipAutoShowDemo-wrapper {
   .card-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     grid-column-gap: 10px;
     position: relative;
     padding: 0 10px;
@@ -281,8 +252,16 @@ export default {
       .details-inner {
         font-size: 14px;
         .details-inner__row {
+          display: flex;
           position: relative;
           margin: 0 0 10px 0;
+          .details-inner__row-value {
+            width: 80%;
+            display: inline-block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
         }
       }
       .opr-inner {

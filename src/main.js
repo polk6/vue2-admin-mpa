@@ -19,6 +19,9 @@ Vue.prototype.$http = http;
 import { apiUrl } from './service/api.js';
 Vue.prototype.$apiUrl = apiUrl;
 
+// directives
+import './directive/ak-tooltip-auto-show.js';
+
 Vue.config.productionTip = false;
 
 new Vue({

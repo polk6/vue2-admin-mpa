@@ -75,6 +75,12 @@ export default {
           menuIcon: 'el-icon-goods',
           childrens: [{ menuId: '1101', menuName: '双击编辑', menuPath: '/tableDemo/tableDbClickEditDemo' }],
         },
+        {
+          menuId: '12',
+          menuName: '指令扩展',
+          menuIcon: 'el-icon-magic-stick',
+          childrens: [{ menuId: '1201', menuName: 'tooltipAutoShow', menuPath: '/directiveDemo/tooltipAutoShowDemo' }],
+        },
       ],
       /**
        * 菜单的name集合,keep-alive的:include使用
@@ -221,7 +227,7 @@ export default {
       .title {
         font-size: 18px;
         font-weight: bolder;
-        color:var(--theme-ui-color-primary);
+        color: var(--theme-ui-color-primary);
       }
     }
     .theme-wrapper {
